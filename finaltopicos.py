@@ -1,9 +1,12 @@
-# -*- coding: utf-8 -*-
+# -*- coding: latin-1 -*-
 """
-Spyder Editor
 
-This is a temporary script file.
+Elaborado por:
+    Miguel Delgado
+    Paula Aguirre
+    Fabian Palma
 """
+
         
 import pandas as pd
 import numpy as np
@@ -84,15 +87,18 @@ for resultado in resultados:
             print('Cargo: ', row['Cargo'])
             print('Ciudad: ', row['Ciudad'])
             print('Salario: ', row['WAGE'])        
+            #print('Institucion: ', row['Cargo'])
+            print('Ministerio: ', row['Ministerio'])
+            #print('No de Vacantes: ', row['Cargo'])        
+            #print('Región: ', row['Cargo'])        
             print('***********************************************')        
             print('\n')        
         
+#for word, row in model.vocab.items():
+#    print("\n %s :\n %s" % (word, row))
 
-for word, row in model.vocab.items():
-    print("\n %s :\n %s" % (word, row))
-
-words = list(model.wv.vocab)
-print(words)
+#words = list(model.wv.vocab)
+#print(words)
 
 
 
