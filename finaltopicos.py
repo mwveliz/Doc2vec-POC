@@ -14,6 +14,7 @@ import numpy as np
 import string
 from nltk.corpus import stopwords
 from gensim import models
+from nltk.tokenize import word_tokenize
 
 def iniciar_datos():
     #Leyendo e csv a un data frame
@@ -74,7 +75,6 @@ def iniciar_modelo(df):
 
 
 def buscar(df, model, querysearch):
-    querysearch = querysearch.lower()
     #obteniendo los tags (cargos)
         
     try:
@@ -82,7 +82,7 @@ def buscar(df, model, querysearch):
     except:
         print('Lo sentimos, no hay resultados, intente con algo mas amplio')
         return 0
-    resultados = model.docvecs.most_similar(positive=[modelsearch])
+    resultados = model.docvecs.most_similar(positive=modelsearch)
     
     for resultado in resultados:
         salida = []
@@ -123,5 +123,6 @@ while True:
     q = input("Ingrese su palabra o palabras de busqueda de empleo:  (escriba exit para salir) y presione enter \n ")
     if q == 'exit':
         break
-    t = buscar(df, model, q)
+    qtoken =  (q.lower().split())
+    t = buscar(df, model, qtoken)
 print("Gracias por venir, vuelva pronto")
